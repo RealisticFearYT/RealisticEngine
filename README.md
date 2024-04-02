@@ -22,7 +22,11 @@ haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
 ```
 After you have installed all the libraries go to the RealisticEngine folder and open terminal and place:
 ```
-lime test windows or lime test windows -debug
+lime test windows
+```
+or
+```
+lime test windows -debug
 ```
 The lime test windows -debug is used to see the errors in the compilation.
 Is it normal that after compiling it tells me a warning at some point?
