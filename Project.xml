@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- _________________________ Application Settings _________________________ -->
+
+	<app title="Friday Night Funkin' Realistic Engine" file="RealisticEngine" packageName="net.pahaze.realisticengine" package="net.pahaze.realistinengine" main="Main" version="0.10-beta" company="pahaze" />
+
+	<set name="APP_ID" value="0x0100f6c013bbc000" />
+
+	<app preloader="flixel.system.FlxPreloader" />
+
+	<set name="SWF_VERSION" value="11.8" />
+
+	<!-- ____________________________ Window Settings ___________________________ -->
+
+	<!--These window settings apply to all targets-->
+	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" />
+
+	<!--HTML5-->
+	<window if="html5" resizable="true" />
+
+	<!--Desktop-->
+	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
+
+	<!--Mobile-->
+	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false" />
+
+	<!-- _____________________________ Path Settings ____________________________ -->
+
+	<set name="BUILD_DIR" value="export/debug" if="debug" 		/>
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+	<set name="BUILD_DIR" value="export/32bit" if="32bit" 		/>
+
+	<classpath name="source" />
+
+	<assets path="assets/preload" rename="assets" />
+	
+	<library name="songs"    preload="false" />
+	<library name="shared"   preload="false" />
+	<library name="tutorial" preload="false" />
+	<library name="week1"    preload="false" />
+	<library name="week2"    preload="false" />
+	<library name="week3"    preload="false" />
+	<library name="week4"    preload="false" />
+	<library name="week5"    preload="false" />
+	<library name="week6"    preload="false" />
+	
+	<assets path="assets/songs"    library="songs"  />
+	<assets path="assets/shared"   library="shared" />
+	<assets path="assets/week2"    library="week2"  />
+	<assets path="assets/week3"    library="week3"  />
+	<assets path="assets/week4"    library="week4"  />
+	<assets path="assets/week5"    library="week5"  />
+	<assets path="assets/week6"    library="week6"  />
+	
+	<assets path='example_mods' rename='mods' embed='false'	 />
+	<assets path='art/readme.txt' rename='do NOT readme.txt' />
+	<assets path="LICENSE" rename="NOT the license.txt" 	 />
+	
+	<assets path="CHANGELOG.md" rename='changelog.txt' />
+
+	<assets path="assets/fonts" embed='true' />
+
+	<!-- _______________________________ Libraries ______________________________ -->
+
+	<haxedev set='webgl' />
+	
+	<haxelib name="flixel" 					 />
+	<haxelib name="flixel-addons" 			 />
+	<haxelib name="flixel-ui" 				 />
+	<haxelib name="discord_rpc" if="desktop" />
+
+	<!-- ______________________________ Haxedefines _____________________________ -->
+
+	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
+
+	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+
+	<!-- _________________________________ Custom _______________________________ -->
+
+	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+	
+	<icon path="art/icon16.png" size='16' />
+	<icon path="art/icon32.png" size='32' />
+	<icon path="art/icon64.png" size='64' />
+	<icon path="art/iconOG.png" 		  />
+	<icon path="art/iconOG.svg"			  />
+</project>
