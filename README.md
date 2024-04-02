@@ -1,6 +1,5 @@
 # <img src="art/icon64.png" align="center"> Friday Night Funkin' Realistic Engine </img>
 ## Build instuctions (Windows)
-English:
 If you want to compile the game, follow these steps:
 ATTENTION THIS ENGINE FOR NOW IS ONLY FOR WINDOWS AND ONLY 64 BIT
 1. [Install Haxe 4.2.5](https://haxe.org/download/version/4.1.5/)
