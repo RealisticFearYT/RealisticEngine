@@ -183,7 +183,7 @@ class PlayState extends MusicBeatState {
 	var scoreTxt:FlxText;
 
 	/// Watermark
-	var refunkedWatermark:FlxMarqueeText;
+	var realisticWatermark:FlxMarqueeText;
 	// -- UI
 
 	// Weeks --
@@ -751,9 +751,9 @@ class PlayState extends MusicBeatState {
 		scoreTxt.scrollFactor.set();
 		add(scoreTxt);
 
-		refunkedWatermark = new FlxMarqueeText(4, FlxG.height * 0.97, "", 16, 20, SONG.speed);
-		refunkedWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(refunkedWatermark);
+		realisticWatermark = new FlxMarqueeText(4, FlxG.height * 0.97, "", 16, 20, SONG.speed);
+		realisticWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(realisticWatermark);
 
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -762,7 +762,7 @@ class PlayState extends MusicBeatState {
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
-		refunkedWatermark.cameras = [camHUD];
+		realisticWatermark.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
 		startingSong = true;
@@ -2141,7 +2141,7 @@ class PlayState extends MusicBeatState {
 
 		// UI --
 			/// RFE Watermark
-			refunkedWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE';
+			realisticWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE';
 
 			/// Score Text
 			scoreTxt.text = 'Score: $songScore';

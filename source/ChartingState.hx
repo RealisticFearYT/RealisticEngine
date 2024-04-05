@@ -161,9 +161,9 @@ class ChartingState extends MusicBeatState {
 
 		FlxG.mouse.visible = true;
 		#if (flixel < "5.0.0")
-			FlxG.save.bind('refunked', 'pahaze');
+			FlxG.save.bind('realisticengine', 'pahaze');
 		#else
-			FlxG.save.bind('refunked');
+			FlxG.save.bind('realisticengine');
 		#end
 
 		tempBpm = _song.bpm;
