@@ -44,10 +44,12 @@ class MainMenuState extends MusicBeatState {
 	// -- Camera Stuff
 
 	// Updating --
-	var refunkedVersion:FlxText;
+	var realisticengineVersion:FlxText;
 	var updateAvailabilityText:FlxText;
 	var updateChecker:URLLoader;
 	var vanillaVersion:FlxText;
+
+	public static var realisticEngineVersion:String = '0.1.1'; // This is also used for Discord RPC
 	// -- Updating
 
 	override function create() {
@@ -123,17 +125,31 @@ class MainMenuState extends MusicBeatState {
 
 		FlxG.camera.follow(camFollowPoint, null, 0.06);
 
-		vanillaVersion = new FlxText(5, FlxG.height - 36, 0, "Realistic Engine v0.1.0", 12);
+		vanillaVersion = new FlxText(5, FlxG.height - 44, 0, "Friday Night Funkin v0.2.8", 12);
 		vanillaVersion.scrollFactor.set();
 		vanillaVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(vanillaVersion);
 
-		vanillaVersion = new FlxText(5, FlxG.height - 18, 0, "Friday Night Funkin v0.2.8", 12);
-		vanillaVersion.scrollFactor.set();
-		vanillaVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(vanillaVersion);
+		realisticengineVersion = new FlxText(5, FlxG.height - 24, 0, "Realistic Engine v0.1.1h");
+		realisticengineVersion.scrollFactor.set();
+		realisticengineVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(realisticengineVersion);
+		changeItem();
+
+		#if ACHIEVEMENTS_ALLOWED
+		// Unlocks "Freaky on a Friday Night" achievement if it's a Friday and between 18:00 PM and 23:59 PM
+		var leDate = Date.now();
+		if (leDate.getDay() == 5 && leDate.getHours() >= 18)
+			Achievements.unlock('friday_night_play');
+
+		#if MODS_ALLOWED
+		Achievements.reloadList();
+		#end
+		#end
 
 		super.create();
+
+		FlxG.camera.follow(camFollow, null, 9);
 	}
 
 	function changeItem(huh:Int = 0) {

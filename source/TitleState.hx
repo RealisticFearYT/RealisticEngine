@@ -45,9 +45,9 @@ class TitleState extends MusicBeatState {
 		super.create();
 
 		#if(flixel < "5.0.0")
-			FlxG.save.bind('refunked', 'pahaze');
+			FlxG.save.bind('realisticengine', 'pahaze');
 		#else
-			FlxG.save.bind('refunked');
+			FlxG.save.bind('realisticengine');
 		#end
 
 		Options.checkControls();
@@ -106,7 +106,7 @@ class TitleState extends MusicBeatState {
 				deleteCoolText();
 
 			case 5:
-				createCoolText(['Not association', 'with']);
+				createCoolText(['In association', 'with']);
 
 			case 7:
 				addMoreText('newgrounds');
@@ -136,7 +136,6 @@ class TitleState extends MusicBeatState {
 
 			case 16:
 				addMoreText('Realistic');
-
 			case 17:
 				addMoreText('Engine');
 
