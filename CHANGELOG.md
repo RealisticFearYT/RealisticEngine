@@ -4,7 +4,7 @@ All notable changes will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.10-beta - ReFunked] - 2023-01-10 through ??? - Unfinished
+## [0.10-beta - RealisticEngine] - 2023-01-10 through ??? - Unfinished
 ### Added
 - `art/Concept` folder, concept art for characters, icons, etc will go in here
 - `CurrentVersion.txt` file, used for automatic builds (future)
@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed useless files from the `art` folder
 
-## [0.10-alpha - ReFunked] - 2022-12-12
+## [0.10-alpha - RealisticEngine] - 2022-12-12
 ### Added
 - 0.2.8 assets! (Charts, loading screen, main menu, story menu characters)
 - BOTPLAY mode
@@ -36,8 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Boyfriend's sprites were updated to include missing animations
 - Character icons are now separate PNGs
 - Character sprites are now in shared/images/characters
-- Characters are now in JSON files (not compatible with ReFunked 0.99-alpha-next's JSON files)
-- Charts now have some things from ReFunked 0.99-alpha-next (gfPlayer, songName, stage, uiStyle)
+- Characters are now in JSON files (not compatible with RealisticEngine 0.99-alpha-next's JSON files)
+- Charts now have some things from RealisticEngine 0.99-alpha-next (gfPlayer, songName, stage, uiStyle)
 - Cleaned up a TON of files
 - Countdown sprites, ratings, combo, and notes hit now stick to the camera so they don't go off screen / are in the way of notes
 - Freeplay state now actually expands the personal best similar to 0.2.8 so it doesn't go off screen
