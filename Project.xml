@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin' Realistic Engine" file="RealisticEngine" packageName="net.pahaze.realisticengine" package="net.pahaze.realistinengine" main="Main" version="0.10-beta" company="pahaze" />
+	<app title="Friday Night Funkin': Realistic Engine" file="RealisticEngine" packageName="net.pahaze.realisticengine" package="net.pahaze.realisticengine" main="Main" version="0.10-beta" company="pahaze" />
 
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
 
