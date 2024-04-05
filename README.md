@@ -1,4 +1,4 @@
-# <img src="art/icon64.png" align="center"> Friday Night Funkin' Realistic Engine </img>
+# <img src="art/icon64.png" align="center"> Friday Night Funkin': Realistic Engine </img>
 ## Build instuctions (Windows)
 If you want to compile the game, follow these steps:
 ATTENTION THIS ENGINE FOR NOW IS ONLY FOR WINDOWS AND ONLY 64 BIT
