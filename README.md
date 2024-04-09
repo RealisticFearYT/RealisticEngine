@@ -34,6 +34,7 @@ or
 lime test windows -debug
 ```
 The lime test windows -debug is used to see the errors in the compilation.
+
 Is it normal that after compiling it tells me a warning at some point?
 
 Yes, if it is normal, it is not an error, it is just a warning.
