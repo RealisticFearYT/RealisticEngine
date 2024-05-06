@@ -2,6 +2,8 @@
 ## Realistic Engine Team
 -SoyFear (Director, Programmer)
 
+-Xuca (Programmer)
+
 ## Build instuctions (Windows)
 If you want to compile the game, follow these steps:
 ATTENTION THIS ENGINE FOR NOW IS ONLY FOR WINDOWS AND ONLY 64 BIT
