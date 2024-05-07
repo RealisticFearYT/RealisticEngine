@@ -40,13 +40,13 @@ class Character extends FlxSprite {
 		switch(curCharacter) {
 			default:
 				#if sys
-					characterPath = "assets/chars/" + curCharacter + ".json";
+					characterPath = "assets/characters/" + curCharacter + ".json";
 					if(!Utilities.checkFileExists(characterPath))
-						characterPath = "assets/chars/bf.json";
+						characterPath = "assets/characters/bf.json";
 				#else
-					characterPath = "./assets/chars/" + curCharacter + ".json";
+					characterPath = "./assets/characters/" + curCharacter + ".json";
 					if(!Utilities.checkFileExists(characterPath))
-						characterPath = "./assets/chars/bf.json";
+						characterPath = "./assets/characters/bf.json";
 				#end
 
 				rawJson = Utilities.getFileContents(characterPath);

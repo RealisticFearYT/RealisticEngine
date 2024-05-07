@@ -42,8 +42,7 @@ class FreeplayState extends MusicBeatState {
 			DiscordClient.changePresence("In the Freeplay Menu", null);
 		#end
 
-		if(!FlxG.sound.music.playing || FlxG.sound.music.volume == 0)
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			FlxG.sound.playMusic(Paths.music('freakyMenuFreeplay'));
 
 		var isDebug:Bool = false;
 

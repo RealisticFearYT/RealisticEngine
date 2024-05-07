@@ -60,9 +60,7 @@ class MainMenuState extends MusicBeatState {
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
-
-		if (!FlxG.sound.music.playing)
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			FlxG.sound.playMusic(Paths.music('freakyMenuBG'));
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -125,15 +123,10 @@ class MainMenuState extends MusicBeatState {
 
 		FlxG.camera.follow(camFollowPoint, null, 0.06);
 
-		vanillaVersion = new FlxText(5, FlxG.height - 44, 0, "Friday Night Funkin v0.2.8", 12);
+		vanillaVersion = new FlxText(5, FlxG.height - 24, 0, "v2.2.8 FNF - v0.1.1 Realistic Engine", 12);
 		vanillaVersion.scrollFactor.set();
 		vanillaVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(vanillaVersion);
-
-		realisticengineVersion = new FlxText(5, FlxG.height - 24, 0, "Realistic Engine v0.1.1h");
-		realisticengineVersion.scrollFactor.set();
-		realisticengineVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(realisticengineVersion);
 		changeItem();
 
 		#if ACHIEVEMENTS_ALLOWED
@@ -170,18 +163,6 @@ class MainMenuState extends MusicBeatState {
 
 			spr.updateHitbox();
 		});
-	}
-
-	function checkUpdateAvailability(event:openfl.events.Event) {
-		var gitVersion:String = Std.string(updateChecker.data);
-		if(gitVersion == Application.current.meta.get('version'))
-			updateAvailabilityText.text = "No updates available!";
-		else
-			updateAvailabilityText.text = 'Update available! New version: $gitVersion';
-	}
-
-	function failedUpdateCheck(event:openfl.events.Event) {
-		updateAvailabilityText.text = "Unable to check for updates!";
 	}
 
 	function onMenuItemChange(item:MenuItem) {

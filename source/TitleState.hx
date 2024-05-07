@@ -97,26 +97,33 @@ class TitleState extends MusicBeatState {
 
 		switch (curBeat) {
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.music.fadeIn(4, 0, 0.7);
 
-			case 3:
-				addMoreText('present');
+			case 2:
+				createCoolText(['Realistic Engine']);
 
 			case 4:
-				deleteCoolText();
+				addMoreText('By');
 
 			case 5:
-				createCoolText(['In association', 'with']);
+				addMoreText('SoyFear');
+
+			case 6:
+				deleteCoolText();
 
 			case 7:
+				createCoolText(['Not associated', 'with']);
+
+			case 8:
 				addMoreText('newgrounds');
 				ngSpr.visible = true;
 
-			case 8:
+			case 9:
 				deleteCoolText();
 				ngSpr.visible = false;
 
-			case 9:
+			case 10:
 				createCoolText([curWacky[0]]);
 
 			case 11:
@@ -135,11 +142,6 @@ class TitleState extends MusicBeatState {
 				addMoreText('Funkin');
 
 			case 16:
-				addMoreText('Realistic');
-			case 17:
-				addMoreText('Engine');
-
-			case 18:
 				skipIntro();
 		}
 	}

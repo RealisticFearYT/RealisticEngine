@@ -12,7 +12,7 @@ import flixel.util.FlxColor;
 class PauseSubState extends MusicBeatSubstate {
 	// Menu Items --
 	var grpMenuStuff:FlxTypedGroup<Alphabet>;
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Botplay'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song'];
 	var curSelected:Int = 0;
 	// -- Menu Items
 
@@ -29,7 +29,9 @@ class PauseSubState extends MusicBeatSubstate {
 		if(PlayState.isStoryMode) {
 			menuItems.push("Exit to Menu");
 		} else {
-			menuItems.push("Exit to MenuFreeplay");
+			menuItems.push("Practice Mode");
+			menuItems.push("Botplay");
+			menuItems.push("Exit to Menu");
 		}
 
 		pauseMusic = new FlxSound().loadEmbedded(Paths.music('breakfast'), true, true);
@@ -176,14 +178,8 @@ class PauseSubState extends MusicBeatSubstate {
 					else
 						practiceText.y = 84;
 
-				case "Exit to MenuFreeplay":
-					FlxG.switchState(new FreeplayState());
-
 				case "Exit to Menu":
 					FlxG.switchState(new MainMenuState());
-
-				case "Exit to Story Mode Menu":
-					FlxG.switchState(new StoryMenuState());
 
 				case "Practice Mode":
 					PlayState.PlayStateInstance.practiceMode = !PlayState.PlayStateInstance.practiceMode;

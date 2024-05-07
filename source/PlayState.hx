@@ -183,7 +183,7 @@ class PlayState extends MusicBeatState {
 	var scoreTxt:FlxText;
 
 	/// Watermark
-	var realisticWatermark:FlxMarqueeText;
+	var realisticWatermark:FlxText;
 	// -- UI
 
 	// Weeks --
@@ -751,7 +751,7 @@ class PlayState extends MusicBeatState {
 		scoreTxt.scrollFactor.set();
 		add(scoreTxt);
 
-		realisticWatermark = new FlxMarqueeText(4, FlxG.height * 0.97, "", 16, 20, SONG.speed);
+		realisticWatermark = new FlxText(4, FlxG.height * 0.97, "");
 		realisticWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(realisticWatermark);
 
@@ -2140,12 +2140,15 @@ class PlayState extends MusicBeatState {
 		// -- Song Info
 
 		// UI --
-			/// RFE Watermark
-			realisticWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE';
+			/// RE Watermark
+			realisticWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE v0.1.1';
 
 			/// Score Text
 			scoreTxt.text = 'Score: $songScore';
 			scoreTxt.angle = 0;
+			scoreTxt.x = 850;
+			scoreTxt.y = 670;
+
 		// -- UI
 
 		if(FlxG.keys.justPressed.ENTER && startedCountdown && canPause) {

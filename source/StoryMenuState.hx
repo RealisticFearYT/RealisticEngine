@@ -28,7 +28,7 @@ class StoryMenuState extends MusicBeatState {
 		['Pico', 'Philly', "Blammed"],
 		['Satin-Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
-		['Senpai', 'Roses', 'Thorns']
+		['Senpai', 'Roses', 'Thorns'],
 	];
 	var curDifficulty:Int = 1;
 
@@ -74,10 +74,7 @@ class StoryMenuState extends MusicBeatState {
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-		if (FlxG.sound.music != null) {
-			if (!FlxG.sound.music.playing)
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
-		}
+			FlxG.sound.playMusic(Paths.music('freakyMenuStoryMenu'));
 
 		persistentDraw = true;
 		persistentUpdate = true;
@@ -179,6 +176,7 @@ class StoryMenuState extends MusicBeatState {
 		sprDifficulty.animation.addByPrefix('easy', 'EASY');
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
+		sprDifficulty.animation.addByPrefix('erect', 'ERECT');
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
@@ -318,6 +316,9 @@ class StoryMenuState extends MusicBeatState {
 			case 2:
 				sprDifficulty.animation.play('hard');
 				sprDifficulty.offset.x = 20;
+			case 2:
+				sprDifficulty.animation.play('erect');
+				sprDifficulty.offset.x = 70;
 		}
 
 		sprDifficulty.alpha = 0;

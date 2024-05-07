@@ -216,12 +216,12 @@ class ChartingState extends MusicBeatState {
 		var UI_songTitle = new FlxUIInputText(10, 25, 175, _song.song, 8);
 		typingStuff = UI_songTitle;
 
-		var UI_songTitleText = new FlxText(UI_songTitle.x, UI_songTitle.y - 15, 0, "Assets (Folder/Data) Name:");
+		var UI_songTitleText = new FlxText(UI_songTitle.x, UI_songTitle.y - 15, 0, "Song Name:");
 
 		var UI_songNameTitle = new FlxUIInputText(10, 60, 175, (_song.songName != null ? _song.songName : _song.song), 8);
 		moreTypingStuff = UI_songNameTitle;
 
-		var UI_songNameTitleText = new FlxText(UI_songNameTitle.x, UI_songNameTitle.y - 15, 0, "Song Name (can use any characters):");
+		var UI_songNameTitleText = new FlxText(UI_songNameTitle.x, UI_songNameTitle.y - 15, 0, "Watermark Song Name:");
 
 		var check_voices = new FlxUICheckBox(10, 80, null, null, "Song needs voices?", 100);
 		check_voices.checked = _song.needsVoices;
@@ -265,9 +265,8 @@ class ChartingState extends MusicBeatState {
 
 		var stepperSpeedText = new FlxText(stepperSpeed.x, stepperSpeed.y - 15, 0, "Note Speed:");
 
-		var characters:Array<String> = CoolUtil.coolTextFile(Paths.file('chars/characterList.txt'));
+		var characters:Array<String> = CoolUtil.coolTextFile(Paths.file('characters/characterList.txt'));
 		var stages:Array<String> = CoolUtil.coolTextFile(Paths.file('stages/stageList.txt'));
-		var uiStyles:Array<String> = ["normal", "pixel"];
 
 		var player2DropDown = new FlxUIDropDownMenuCustom(140, 165, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String) {
 			_song.player2 = characters[Std.parseInt(character)];
@@ -276,7 +275,7 @@ class ChartingState extends MusicBeatState {
 
 		player2DropDown.selectedLabel = _song.player2;
 
-		var player2Text = new FlxText(player2DropDown.x, player2DropDown.y - 15, 0, "Player 2:");
+		var player2Text = new FlxText(player2DropDown.x, player2DropDown.y - 15, 0, "Opponent:");
 		scrollBlockThing.push(player2DropDown);
 
 		var gfPlayerDropDown = new FlxUIDropDownMenuCustom(10, 200, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String) {
@@ -314,19 +313,6 @@ class ChartingState extends MusicBeatState {
 
 		var stageText = new FlxText(stageDropDown.x, stageDropDown.y - 15, 0, "Stage:");
 
-		var uiStyleDropDown = new FlxUIDropDownMenuCustom(10, 235, FlxUIDropDownMenu.makeStrIdLabelArray(uiStyles, true), function(uiStyle:String) {
-			_song.uiStyle = uiStyles[Std.parseInt(uiStyle)];
-		});
-		scrollBlockThing.push(uiStyleDropDown);
-
-		if(_song.uiStyle != null) {
-			uiStyleDropDown.selectedLabel = _song.uiStyle;
-		} else {
-			uiStyleDropDown.selectedLabel = "normal";
-		}
-
-		var uiStyleText = new FlxText(uiStyleDropDown.x, uiStyleDropDown.y - 15, 0, "UI Style:");
-
 		var tab_group_song = new FlxUI(null, UI_box);
 		tab_group_song.name = "Song";
 		tab_group_song.add(UI_songTitle);
@@ -342,8 +328,6 @@ class ChartingState extends MusicBeatState {
 		tab_group_song.add(stepperBPMText);
 		tab_group_song.add(stepperSpeed);
 		tab_group_song.add(stepperSpeedText);
-		tab_group_song.add(uiStyleDropDown);
-		tab_group_song.add(uiStyleText);
 		tab_group_song.add(gfPlayerDropDown);
 		tab_group_song.add(gfPlayerText);
 		tab_group_song.add(stageDropDown);

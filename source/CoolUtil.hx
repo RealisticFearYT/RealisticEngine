@@ -5,7 +5,7 @@ import lime.utils.Assets;
 using StringTools;
 
 class CoolUtil {
-	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD"];
+	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD", "ERECT"];
 
 	public static function coolTextFile(path:String):Array<String> {
 		var daList:Array<String> = Assets.getText(path).trim().split('\n');

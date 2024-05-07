@@ -134,12 +134,6 @@ class OptionsMenu extends MusicBeatState {
 		ThemeBGThing.scrollFactor.set();
 		add(ThemeBGThing);
 
-		ThemeThing = new FlxText(5, 1, 0, "Themes will be re-integrated later! For now, you can have the RFE theme :)", 16);
-		ThemeThing.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		ThemeThing.scrollFactor.set();
-		ThemeThing.screenCenter(X);
-		add(ThemeThing);
-
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
