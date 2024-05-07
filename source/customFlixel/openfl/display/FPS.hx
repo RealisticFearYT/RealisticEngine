@@ -43,6 +43,8 @@ class FPS extends TextField
 		mouseEnabled = false;
 		defaultTextFormat = new TextFormat("_sans", 14, color);
 		text = "FPS: ";
+		scaleX = 0.8;
+		scaleY = 0.8;
 
 		cacheCount = 0;
 		currentTime = 0;
