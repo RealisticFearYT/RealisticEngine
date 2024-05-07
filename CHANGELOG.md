@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update checking
 ### Changed
 - Moved `art/flashFiles` to `art/Flash Files`
-- Hardcoded RFE's theme over Vanilla. Will move to themes again later on
+- Hardcoded RE's theme over Vanilla. Will move to themes again later on
 - Options menu now uses E/R to change tabs (so you can go back/forth) now
 ### Fixed
 - Boyfriend's voice is no longer off sync in the first 4 verses in Monster! (by [Junimeek](https://github.com/Junimeek))
@@ -128,7 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.4] - 2020-12-11
 ### Added
-- 3 NEW SONGS BY KAWAISPRITE. Pico, Philly, and Blammed.
+- 3 NEW SONGS BY KAWAISPRITE. Pico, Philly Nice, and Blammed.
 - NEW CHARACTER, PICO. Based off the classic Flash game "Pico's School" by Tom Fulp
 - NEW LEVEL WOW! PHILLY BABEEEE
 ### Changed
