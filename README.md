@@ -2,7 +2,7 @@
 ## Realistic Engine Team
 -SoyFear (Director, Programmer)
 
--BoyfriendPorts723 (Logo artist and animator for the engine)
+-Xuca(Programmer)
 
 ## Build instuctions (Windows)
 If you want to compile the game, follow these steps:
