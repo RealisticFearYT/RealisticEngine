@@ -45,7 +45,7 @@ class TitleState extends MusicBeatState {
 		super.create();
 
 		#if(flixel < "5.0.0")
-			FlxG.save.bind('realisticengine', 'pahaze');
+			FlxG.save.bind('realisticengine', 'soyfear');
 		#else
 			FlxG.save.bind('realisticengine');
 		#end
@@ -208,10 +208,9 @@ class TitleState extends MusicBeatState {
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl = new FlxSprite(0, -80);
+		logoBl.frames = Paths.getSparrowAtlas('Logo_Bumpin');
 		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 

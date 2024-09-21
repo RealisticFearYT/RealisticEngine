@@ -49,7 +49,7 @@ class MainMenuState extends MusicBeatState {
 	var updateChecker:URLLoader;
 	var vanillaVersion:FlxText;
 
-	public static var realisticEngineVersion:String = '0.1.1'; // This is also used for Discord RPC
+	public static var realisticEngineVersion:String = '0.1.2 Pit Update'; // This is also used for Discord RPC
 	// -- Updating
 
 	override function create() {
@@ -100,30 +100,23 @@ class MainMenuState extends MusicBeatState {
 		menuItems.enabled = false;
 
 		// Story Mode
-		menuItems.createItem(0, 0, "story mode", function() {
+		menuItems.createItem(0, 50, "story mode", function() {
 			startExitState(new StoryMenuState());
 		});
 
 		// Freeplay
-		menuItems.createItem(0, 0, "freeplay", function() {
+		menuItems.createItem(0, 250, "freeplay", function() {
 			startExitState(new FreeplayState());
 		});
 
 		// Options
-		menuItems.createItem(0, 0, "options", function() {
+		menuItems.createItem(0, 450, "options", function() {
 			startExitState(new OptionsMenu());
 		});
 
-		var pos:Float = (FlxG.height - 280 * (menuItems.length - 1)) / 2;
-		for (i in 0...menuItems.length) {
-			var item:MainMenuItem = menuItems.members[i];
-			item.x = FlxG.width / 2;
-			item.y = pos + (180 * i);
-		}
-
 		FlxG.camera.follow(camFollowPoint, null, 0.06);
 
-		vanillaVersion = new FlxText(5, FlxG.height - 24, 0, "v2.2.8 FNF - v0.1.1 Realistic Engine", 12);
+		vanillaVersion = new FlxText(775, 0, FlxG.height - 24, "v0.4.1 Modified FNF - v0.1.2 Pit Update Realistic Engine", 12);
 		vanillaVersion.scrollFactor.set();
 		vanillaVersion.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(vanillaVersion);

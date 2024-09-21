@@ -168,7 +168,6 @@ class PauseSubState extends MusicBeatSubstate {
 
 		if (accepted) {
 			var daSelected:String = menuItems[curSelected];
-
 			switch (daSelected) {
 				case "Botplay":
 					PlayState.PlayStateInstance.botplayMode = !PlayState.PlayStateInstance.botplayMode;

@@ -179,6 +179,7 @@ class FreeplayState extends MusicBeatState {
 	}
 
 	function positionHighscore() {
+		scoreText.x = FlxG.width - scoreText.width - 100;
 		scoreText.x = FlxG.width - scoreText.width - 6;
 		scoreBG.scale.x = FlxG.width - scoreText.x + 6;
 		scoreBG.x = FlxG.width - scoreBG.scale.x / 2;
@@ -196,7 +197,7 @@ class FreeplayState extends MusicBeatState {
 		if (Math.abs(lerpScore - intendedScore) <= 10)
 			lerpScore = intendedScore;
 
-		scoreText.text = "PERSONAL BEST:" + lerpScore;
+		scoreText.text = "FREEPLAY SCORE:" + lerpScore;
 		positionHighscore();
 
 		var upP = controls.UP_P;

@@ -100,8 +100,8 @@ class ChartingState extends MusicBeatState {
 		add(leftIcon);
 		add(rightIcon);
 
-		leftIcon.setPosition(0, -100);
-		rightIcon.setPosition(gridBG.width / 2, -100);
+		leftIcon.setPosition(0, -200);
+		rightIcon.setPosition(gridBG.width / 2, -200);
 
 		var gridBlackLine:FlxSprite = new FlxSprite(gridBG.x + gridBG.width / 2).makeGraphic(2, Std.int(gridBG.height), FlxColor.BLACK);
 		add(gridBlackLine);
@@ -127,41 +127,9 @@ class ChartingState extends MusicBeatState {
 			};
 		}
 
-		switch(_song.song.toLowerCase()) {
-			case 'bopeebo' | 'fresh' | 'dadbattle':
-				commonStagesLabel = "stage";
-
-			case 'spookeez' | 'monster' | 'south':
-				commonStagesLabel = "spooky";
-
-			case 'pico' | 'blammed' | 'philly':
-				commonStagesLabel = "philly";
-
-			case 'milf' | 'mombattle' | 'satin-lovers' | 'satin-panties' | 'high':
-				commonStagesLabel = "limo";
-
-			case 'cocoa' | 'eggnog':
-				commonStagesLabel = "mall";
-
-			case 'winter-horrorland':
-				commonStagesLabel = "mallEvil";
-
-			case 'senpai':
-				commonStagesLabel = "school";
-
-			case 'thorns':
-				commonStagesLabel = "schoolEvil";
-
-			case 'roses':
-				commonStagesLabel = "schoolMad";
-
-			default:
-				commonStagesLabel = "stage";
-		}
-
 		FlxG.mouse.visible = true;
 		#if (flixel < "5.0.0")
-			FlxG.save.bind('realisticengine', 'pahaze');
+			FlxG.save.bind('realisticengine', 'soyfear');
 		#else
 			FlxG.save.bind('realisticengine');
 		#end
@@ -192,6 +160,8 @@ class ChartingState extends MusicBeatState {
 		var tabs = [
 			{name: "Song", label: 'Song'},
 			{name: "Section", label: 'Section'},
+			{name: "DataEvents", label: 'DataEvents'},
+			{name: "Modchart", label: 'Modchart'},
 			{name: "Note", label: 'Note'}
 		];
 
@@ -204,12 +174,22 @@ class ChartingState extends MusicBeatState {
 
 		addSongUI();
 		addSectionUI();
+		addDataEventsUI();
+		addModchartUI();
 		addNoteUI();
 
 		add(curRenderedNotes);
 		add(curRenderedSustains);
 
 		super.create();
+	}
+
+	function addDataEventsUI():Void {
+		
+	}
+
+	function addModchartUI():Void {
+		
 	}
 
 	function addSongUI():Void {

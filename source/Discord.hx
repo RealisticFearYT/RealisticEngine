@@ -38,7 +38,7 @@ class DiscordClient
 			details: details,
 			state: state,
 			largeImageKey: 'icon',
-			largeImageText: "Friday Night Funkin' RealisticEngine",
+			largeImageText: "Friday Night Funkin' Realistic Engine",
 			startTimestamp : Std.int(startTimestamp / 1000),
             endTimestamp : Std.int(endTimestamp / 1000)
 		});
@@ -57,7 +57,7 @@ class DiscordClient
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
-			largeImageText: "Friday Night Funkin' RealisticEngine"
+			largeImageText: "Friday Night Funkin' Realistic Engine"
 		});
 
 		initialized = true;
