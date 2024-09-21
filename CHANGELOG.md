@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.6] - 2021-01-20
 ### Added
 - 3 NEW CHRISTMAS SONGS. 2 BY KAWAISPRITE, 1 BY BASSETFILMS!!!!! BF WITH DRIP! SANTA HANGIN OUT!
-- Enemy icons change when they you are winning a lot ([Thanks to pahaze for the Pull Request!](https://github.com/ninjamuffin99/Funkin/pull/138))
+- Enemy icons change when they you are winning a lot ([Thanks to soyfear for the Pull Request!](https://github.com/ninjamuffin99/Funkin/pull/138))
 - Holding CTRL in charting editor places notes on both sides
 - Q and E changes sustain lengths in note editor
 - Other charting editor workflow improvements
