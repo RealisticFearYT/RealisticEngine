@@ -1,8 +1,16 @@
 # <img src="art/icon64.png" align="center"> Friday Night Funkin' Realistic Engine </img>
 ## Realistic Engine Team
--SoyFear (Director, Programmer)
+-SoyFear (Director, Programmer, Charter)
 
--Xuca(Programmer)
+-Britex(EX Programmer)
+
+-Arsenio2024(Artist)
+
+-QuasarXP(Artist)
+
+-CrucialMan(Composer)
+
+-Sourdless(Programmer)
 
 ## Build instuctions (Windows)
 If you want to compile the game, follow these steps:
