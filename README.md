@@ -30,7 +30,6 @@ haxelib run lime setup flixel
 haxelib run lime setup
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 haxelib git polymod https://github.com/larsiusprime/polymod.git
-haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
 ```
 After you have installed all the libraries go to the RealisticEngine folder and open terminal and place:
