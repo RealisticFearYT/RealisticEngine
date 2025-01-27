@@ -6,4 +6,5 @@ school
 schoolEvil
 schoolMad
 spooky
+tank
 stage

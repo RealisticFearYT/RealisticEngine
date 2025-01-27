@@ -9,14 +9,15 @@ gf
 gf-car
 gf-christmas
 gf-pixel
-lucky
 mom
 mom-car
 monster
 monster-christmas
 parents-christmas
 pico
+tankman
 senpai
 senpai-angry
 spirit
 spooky
+darnell

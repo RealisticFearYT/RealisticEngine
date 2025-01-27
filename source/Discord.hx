@@ -12,7 +12,7 @@ class DiscordClient
 	public function new() {
 		trace("Discord Client starting...");
 		DiscordRpc.start({
-			clientID: "1032440080519938079",
+			clientID: "1294413597614804993",
 			onReady: onReady,
 			onError: onError,
 			onDisconnected: onDisconnected
@@ -38,7 +38,7 @@ class DiscordClient
 			details: details,
 			state: state,
 			largeImageKey: 'icon',
-			largeImageText: "Friday Night Funkin' Realistic Engine",
+			largeImageText: "Friday Night Funkin': Realistic Engine",
 			startTimestamp : Std.int(startTimestamp / 1000),
             endTimestamp : Std.int(endTimestamp / 1000)
 		});
@@ -57,7 +57,7 @@ class DiscordClient
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
-			largeImageText: "Friday Night Funkin' Realistic Engine"
+			largeImageText: "Friday Night Funkin': Realistic Engine"
 		});
 
 		initialized = true;

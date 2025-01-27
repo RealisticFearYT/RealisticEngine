@@ -1,27 +1,32 @@
 # <img src="art/icon64.png" align="center"> Friday Night Funkin' Realistic Engine </img>
 ## Realistic Engine Team
--SoyFear (Director, Programmer, Charter)
+-SoyFear (Creator, Programmer, Artist)
 
--Britex(EX Programmer)
+-Britex (Ex-Programmer)
 
--Arsenio2024(Artist)
+-Arsenio2024 (Artist)
 
--QuasarXP(Artist)
+-LobitoCraftMC (Programmer)
 
--CrucialMan(Composer)
+-CesarTSO (Artist)
 
--Sourdless(Programmer)
+-Michael121408 (Programmer)
+
+-JeppTurs (Artist Logo)
+
+-CrucialMusic's Forever (Composer)
 
 ## Build instuctions (Windows)
 If you want to compile the game, follow these steps:
 ATTENTION THIS ENGINE FOR NOW IS ONLY FOR WINDOWS AND ONLY 64 BIT
-1. [Install Haxe 4.2.5](https://haxe.org/download/version/4.1.5/)
+1. [Install Haxe 4.1.5](https://haxe.org/download/version/4.1.5/)
 2. [Install HaxeFlixel](https://haxeflixel.com/documentation/install-haxeflixel/) after downloading Haxe
 Now open cmd and type the following commands:
 ```
 haxelib install lime
 haxelib install openfl
 haxelib install flixel
+haxelib install flixel-haxelib install addons
 haxelib install flixel-ui
 haxelib install hscript
 haxelib install newgrounds
@@ -29,6 +34,7 @@ haxelib run lime setup flixel
 haxelib run lime setup
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 haxelib git polymod https://github.com/larsiusprime/polymod.git
+haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
 ```
 After you have installed all the libraries go to the RealisticEngine folder and open terminal and place:

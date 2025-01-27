@@ -84,7 +84,7 @@
 	"CharacterAntialiasing": true,
 	"CharacterImage": "characters/bfChristmas",
 	"CharacterPositionOffsets": [0, 350],
-	"CharacterCameraOffsets": [0, -100],
+	"CharacterCameraOffsets": [-160, -320],
 	"CharacterFlipX": true,
 	"CharacterScale": 1
 }

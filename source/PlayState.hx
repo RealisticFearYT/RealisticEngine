@@ -16,6 +16,7 @@ import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -83,6 +84,7 @@ class PlayState extends MusicBeatState {
 
 	/// Campaign Score (Story Mode)
 	public static var campaignScore:Int = 0;
+	public static var campaignMisses:Int = 0;
 
 	/// Cameras
 	public static var camFollow:FlxObject;
@@ -181,6 +183,9 @@ class PlayState extends MusicBeatState {
 
 	/// Score
 	var scoreTxt:FlxText;
+	var scoreTxtTween:FlxTween;
+
+	public var songMisses:Int = 0;
 
 	/// Watermark
 	var realisticWatermark:FlxText;
@@ -445,6 +450,8 @@ class PlayState extends MusicBeatState {
 				add(santa);
 			}
 			case 'mallEvil': {
+				defaultCamZoom = 1;
+
 				curStage = 'mallEvil';
 
 				var bg:FlxSprite = new FlxSprite(-400, -500).loadGraphic(Paths.image('christmas/evilBG'));
@@ -462,6 +469,8 @@ class PlayState extends MusicBeatState {
 
 				var evilSnow:FlxSprite = new FlxSprite(-200, 700).loadGraphic(Paths.image("christmas/evilSnow"));
 				evilSnow.antialiasing = true;
+				evilSnow.scale.x = 1.1;
+				evilSnow.scale.y = 1.1;
 				add(evilSnow);
 			}
 			case 'school' | 'schoolMad': {
@@ -535,6 +544,17 @@ class PlayState extends MusicBeatState {
 				bg.scrollFactor.set(0.8, 0.9);
 				bg.scale.set(6, 6);
 				add(bg);
+			}
+			case 'tank': {
+				defaultCamZoom = 1;
+
+				var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('tankSky'));
+				bg.scrollFactor.set(0.1, 0.1);
+				add(bg);
+
+				var mountains:FlxSprite = new FlxSprite(-100, -10).loadGraphic(Paths.image('tankMountains'));
+				mountains.scrollFactor.set(0.1, 0.1);
+				add(mountains);
 			}
 			case 'stage': {
 				defaultCamZoom = 0.9;
@@ -658,6 +678,10 @@ class PlayState extends MusicBeatState {
 				else if(SONG.player2.startsWith("spooky"))
 					ActorSprites["opponent"].y += 200;
 
+			case 'tank':
+				ActorSprites["boyfriend"].x += 200;
+				ActorSprites["opponent"].x -= 500;
+
 			case 'stage':
 				camPos.x += 400;
 		}
@@ -735,7 +759,7 @@ class PlayState extends MusicBeatState {
 
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this, 'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0x00FF0000, 0x0066FF33);
+		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
 		add(healthBar);
 
 		iconP1 = new HealthIcon(SONG.player1, true);
@@ -967,6 +991,7 @@ class PlayState extends MusicBeatState {
 		if(isStoryMode) {
 			if(scored)
 				campaignScore += songScore;
+			    campaignMisses += songMisses;
 
 			storyPlaylist.remove(storyPlaylist[0]);
 
@@ -2141,13 +2166,28 @@ class PlayState extends MusicBeatState {
 
 		// UI --
 			/// RE Watermark
-			realisticWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE v0.1.2 Pit Update';
+			realisticWatermark.text = '${SONG.songName} (${CoolUtil.difficultyString()}) FNF RE v0.1.2 SUPER CHRISTMAS UPDATE';
 
 			/// Score Text
-			scoreTxt.text = 'Score: $songScore';
+			scoreTxt.text = 'Score: $songScore'+ ' | Misses: $misses';
 			scoreTxt.angle = 0;
-			scoreTxt.x = 850;
-			scoreTxt.y = 670;
+			//scoreTxt.x = 530;
+			scoreTxt.screenCenter(X);
+			scoreTxt.y = 680;
+
+			/*if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
+				{
+					if(scoreTxtTween != null) {
+						scoreTxtTween.cancel();
+					}
+					scoreTxt.scale.x = 1.075;
+					scoreTxt.scale.y = 1.075;
+					scoreTxtTween = FlxTween.tween(scoreTxt.scale, {x: 1, y: 1}, 0.2, {
+						onComplete: function(twn:FlxTween) {
+							scoreTxtTween = null;
+						}
+					});
+				}*/
 
 		// -- UI
 
@@ -2168,6 +2208,14 @@ class PlayState extends MusicBeatState {
 
 			#if desktop
 				DiscordClient.changePresence("Chart Editor", null, null, true);
+			#end
+		}
+
+		if(FlxG.keys.justPressed.SIX) {
+			FlxG.switchState(new ModchartEditorState());
+
+			#if desktop
+				DiscordClient.changePresence("Modchart Editor Menu", null, null, true);
 			#end
 		}
 
@@ -2429,3 +2477,5 @@ class PlayState extends MusicBeatState {
 		}
 	}
 }
+
+//Access Denied is cool lmao

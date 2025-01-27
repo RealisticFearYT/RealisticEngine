@@ -43,14 +43,14 @@ class HealthIcon extends FlxSprite {
 			this.character = character;
 			// Actualiza el personaje actual.
 
-			loadGraphic(Paths.image('icons/$character'));
+			loadGraphic(Paths.image('icons/icon_$character'));
 			// Carga la imagen del nuevo ícono del personaje.
 
 			if(width == 450)
 				hasWinningIcon = true;
 				// Si el ancho de la imagen es 450, indica que tiene una versión ganadora.
 
-			loadGraphic(Paths.image('icons/$character'), true, 150, 150);
+			loadGraphic(Paths.image('icons/icon_$character'), true, 150, 150);
 			// Vuelve a cargar la imagen con animaciones, estableciendo el tamaño a 150x150.
 
 			antialiasing = true;

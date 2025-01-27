@@ -69,7 +69,7 @@ class TitleState extends MusicBeatState {
 			FlxG.switchState(new ChartingState());
 		#else
 			new FlxTimer().start(1, function(tmr:FlxTimer) {
-				startIntro();
+			startIntro();
 			});
 		#end
 	}
@@ -97,36 +97,29 @@ class TitleState extends MusicBeatState {
 
 		switch (curBeat) {
 			case 1:
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-				FlxG.sound.music.fadeIn(4, 0, 0.7);
+				createCoolText(['The', 'Realistic Engine Team']);
 
-			case 2:
-				createCoolText(['Realistic Engine']);
+			case 3:
+				addMoreText('Presents');
 
 			case 4:
-				addMoreText('By');
-
-			case 5:
-				addMoreText('SoyFear');
-
-			case 6:
 				deleteCoolText();
 
-			case 7:
-				createCoolText(['Not associated', 'with']);
+			case 5:
+				createCoolText(['Not Associated', 'with']);
 
-			case 8:
+			case 6:
 				addMoreText('newgrounds');
 				ngSpr.visible = true;
 
-			case 9:
+			case 7:
 				deleteCoolText();
 				ngSpr.visible = false;
 
-			case 10:
+			case 8:
 				createCoolText([curWacky[0]]);
 
-			case 11:
+			case 9:
 				addMoreText(curWacky[1]);
 
 			case 12:
@@ -187,6 +180,7 @@ class TitleState extends MusicBeatState {
 	}
 
 	function startIntro() {
+		
 		if(!initialized) {
 			var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileDiamond);
 			diamond.persist = true;
@@ -208,10 +202,11 @@ class TitleState extends MusicBeatState {
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		logoBl = new FlxSprite(0, -80);
-		logoBl.frames = Paths.getSparrowAtlas('Logo_Bumpin');
+		logoBl = new FlxSprite(-150, -100);
+		logoBl.frames = Paths.getSparrowAtlas('logoBumpin_FNFOG');
+		logoBl.animation.addByIndices('bump', 'logo bumpin', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+		logoBl.animation.play('logo bumpin');
 		logoBl.antialiasing = true;
-		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
@@ -256,7 +251,7 @@ class TitleState extends MusicBeatState {
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
-		FlxG.mouse.visible = false;
+		FlxG.mouse.visible = true;
 
 		if(initialized)
 			skipIntro();

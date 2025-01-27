@@ -13,22 +13,24 @@ import flixel.util.FlxColor;
 using StringTools;
 
 class FreeplayState extends MusicBeatState {
-	// Songs --
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 1;
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var iconArray:Array<HealthIcon> = [];
 	var selector:FlxText;
 	var songs:Array<SongMetadata> = [];
-	// -- Songs
+	var ostName:FlxText;
 
-	// Score --
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
 	var scoreBG:FlxSprite;
+	var colorBG:FlxSprite;
 	var scoreText:FlxText;
-	// -- Score
+
+	var shiftMult:Int = 1;
+
+	public var angleMaskShader:AngleMask = new AngleMask();
 
 	override function create() {
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
@@ -37,12 +39,13 @@ class FreeplayState extends MusicBeatState {
 			songs.push(new SongMetadata(initSonglist[i], 1, 'gf'));
 		}
 
+		FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+		FlxG.sound.music.fadeIn(4, 0, 0.7);
+
 		#if desktop
 			// Updating Discord Rich Presence
 			DiscordClient.changePresence("In the Freeplay Menu", null);
 		#end
-
-			FlxG.sound.playMusic(Paths.music('freakyMenuFreeplay'));
 
 		var isDebug:Bool = false;
 
@@ -57,7 +60,7 @@ class FreeplayState extends MusicBeatState {
 			addWeek(['Spookeez', 'South', 'Monster'], 2, ['spooky', 'spooky', 'monster']);
 
 		if (StoryMenuState.weekUnlocked[3] || isDebug)
-			addWeek(['Pico', 'Philly', 'Blammed'], 3, ['pico']);
+			addWeek(['Pico', 'Philly-Nice', 'Blammed'], 3, ['pico']);
 
 		if (StoryMenuState.weekUnlocked[4] || isDebug)
 			addWeek(['Satin-Panties', 'High', 'Milf'], 4, ['mom']);
@@ -114,17 +117,17 @@ class FreeplayState extends MusicBeatState {
 		super.create();
 	}
 
-	public function addSong(songName:String, weekNum:Int, songCharacter:String) {
-		songs.push(new SongMetadata(songName, weekNum, songCharacter));
+	public function addSong(songName:String, weekName:Int, songCharacter:String) {
+		songs.push(new SongMetadata(songName, weekName, songCharacter));
 	}
 
-	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>) {
+	public function addWeek(songs:Array<String>, weekName:Int, ?songCharacters:Array<String>) {
 		if (songCharacters == null)
 			songCharacters = ['bf'];
 
 		var num:Int = 0;
 		for (song in songs) {
-			addSong(song, weekNum, songCharacters[num]);
+			addSong(song, weekName, songCharacters[num]);
 
 			if (songCharacters.length != 1)
 				num++;
@@ -197,7 +200,7 @@ class FreeplayState extends MusicBeatState {
 		if (Math.abs(lerpScore - intendedScore) <= 10)
 			lerpScore = intendedScore;
 
-		scoreText.text = "FREEPLAY SCORE:" + lerpScore;
+		scoreText.text = "PERSONAL BEST:" + lerpScore;
 		positionHighscore();
 
 		var upP = controls.UP_P;
@@ -214,13 +217,21 @@ class FreeplayState extends MusicBeatState {
 		if (controls.RIGHT_P)
 			changeDiff(1);
 
+		if(FlxG.mouse.wheel != 0)
+		{
+			FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
+			changeSelection(-shiftMult * FlxG.mouse.wheel);
+		}
+
 		if (controls.BACK)
 			FlxG.switchState(new MainMenuState());
-
+			
 		if (accepted) {
 			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 
 			trace(poop);
+
+			FlxG.sound.play(Paths.sound('confirmMenu'));
 
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 			PlayState.isStoryMode = false;

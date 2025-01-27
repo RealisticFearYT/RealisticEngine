@@ -1,1 +1,7 @@
 introMod
+characters_Editor
+images_Editor
+music_Editor
+songs_Editor
+sounds_Editor
+weeks_Editor

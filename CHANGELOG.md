@@ -4,53 +4,15 @@ All notable changes will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.10-beta - RealisticEngine] - 2023-01-10 through ??? - Unfinished
-### Added
-- `art/Concept` folder, concept art for characters, icons, etc will go in here
-- `CurrentVersion.txt` file, used for automatic builds (future)
-- New Monster Christmas icons! (by [Junimeek](https://github.com/Junimeek))
-- New Monster winning icon!
-- Update checking
-### Changed
-- Moved `art/flashFiles` to `art/Flash Files`
-- Hardcoded RE's theme over Vanilla. Will move to themes again later on
-- Options menu now uses E/R to change tabs (so you can go back/forth) now
-### Fixed
-- Boyfriend's voice is no longer off sync in the first 4 verses in Monster! (by [Junimeek](https://github.com/Junimeek))
-- Ratings now check the proper strum time
-- Winning icons actually show in game now
-### Removed
-- Removed useless files from the `art` folder
+## [0.1.1h - RealisticEngine] - 2024-04-04 through ??? - Finished
+The BG menu animation was removed when changing buttons
+-The pauseSubState was deleted:
+Exit to Story Menu (When you play in story mode)
 
-## [0.10-alpha - RealisticEngine] - 2022-12-12
-### Added
-- 0.2.8 assets! (Charts, loading screen, main menu, story menu characters)
-- BOTPLAY mode
-- Icon SVG (for web)
-- Lucky! (Removed character from OG repo)
-- Options, minimal, but there (downscroll, middlescroll, FPS, Ghost Tapping, Discord Rich Presence, and keybinds)
-- Practice Mode
-- Unknown week image (for future (mods))
-- The pause menu now tells you when the song is not scored (if you use BOTPLAY/Practice) at the bottom right
-### Changed
-- Boyfriend's sprites were updated to include missing animations
-- Character icons are now separate PNGs
-- Character sprites are now in shared/images/characters
-- Characters are now in JSON files (not compatible with RealisticEngine 0.99-alpha-next's JSON files)
-- Charts now have some things from RealisticEngine 0.99-alpha-next (gfPlayer, songName, stage, uiStyle)
-- Cleaned up a TON of files
-- Countdown sprites, ratings, combo, and notes hit now stick to the camera so they don't go off screen / are in the way of notes
-- Freeplay state now actually expands the personal best similar to 0.2.8 so it doesn't go off screen
-- LICENSE gets included with builds
-- Monster is now similar to 0.2.8 (new animations, fixed random bug where neck goes through his face)
-- Moved some assets to make the structure more clean (plan to do more later)
-- New pixel BF/Senpai icons (excluding Spirit)
-- Removed Tutorial / Week 1 libraries (they contained nothing)
-- Updated some Flash files
-### Fixed
-- Some areas being a little broken or too fast with high FPS (based on Psych Engine's code, plan to move to own code later)
-- Sustain notes being in the wrong areas on certain speeds/BPMs
-- You no longer get a miss if you hit a sustain while no normal note is with it and ghost tapping is off
+## [0.1.0 - RealisticEngine] - 2024-04-02 through ??? Finished
+- Uh, nothing lmao, it was the same fnf as always
+
+## Apart of FNF Vanilla
 
 ## [Unreleased/Base 0.2.7.1 master-a083938] - 2022-09-14
 ### Changed

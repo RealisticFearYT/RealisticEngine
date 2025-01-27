@@ -23,6 +23,8 @@ class PauseSubState extends MusicBeatSubstate {
 	var scoredText:FlxText;
 	// -- Text / Music
 
+	var shiftMult:Int = 1;
+
 	public function new(x:Float, y:Float) {
 		super();
 
@@ -63,7 +65,7 @@ class PauseSubState extends MusicBeatSubstate {
 		botplayText.scrollFactor.set();
 		botplayText.setFormat("VCR OSD Mono", 32);
 		botplayText.updateHitbox();
-		botplayText.visible = PlayState.PlayStateInstance.botplayMode;
+		botplayText.visible = false;
 		add(botplayText);
 
 		practiceText = new FlxText(20, (botplayText.visible ? 79+32 : 47+32), 0, "PRACTICE", 32);
@@ -166,6 +168,12 @@ class PauseSubState extends MusicBeatSubstate {
 		if (downP)
 			changeSelection(1);
 
+		if(FlxG.mouse.wheel != 0)
+		{
+			FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
+			changeSelection(-shiftMult * FlxG.mouse.wheel);
+		}
+
 		if (accepted) {
 			var daSelected:String = menuItems[curSelected];
 			switch (daSelected) {
@@ -178,7 +186,13 @@ class PauseSubState extends MusicBeatSubstate {
 						practiceText.y = 84;
 
 				case "Exit to Menu":
-					FlxG.switchState(new MainMenuState());
+                    if(PlayState.isStoryMode) {
+                        FlxG.switchState(new StoryMenuState());
+						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+                    } else {
+                        FlxG.switchState(new FreeplayState());
+						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+                    }
 
 				case "Practice Mode":
 					PlayState.PlayStateInstance.practiceMode = !PlayState.PlayStateInstance.practiceMode;

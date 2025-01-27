@@ -25,10 +25,11 @@ class StoryMenuState extends MusicBeatState {
 		['Tutorial'],
 		['Bopeebo', 'Fresh', 'Dadbattle'],
 		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly', "Blammed"],
+		['Pico', 'Philly-Nice', "Blammed"],
 		['Satin-Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
+		['Ugh', 'Guns', 'Stress'],
 	];
 	var curDifficulty:Int = 1;
 
@@ -41,7 +42,8 @@ class StoryMenuState extends MusicBeatState {
 		['pico', 'bf', 'gf'],
 		['mom', 'bf', 'gf'],
 		['parents-christmas', 'bf', 'gf'],
-		['senpai', 'bf', 'gf']
+		['senpai', 'bf', 'gf'],
+		['tankman', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
@@ -51,7 +53,8 @@ class StoryMenuState extends MusicBeatState {
 		"Pico",
 		"Mommy Must Murder",
 		"Red Snow",
-		"Hating Simulator ft. Moawling"
+		"Hating Simulator ft. Moawling",
+		"Tankman"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -70,12 +73,15 @@ class StoryMenuState extends MusicBeatState {
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
 
+	var shiftMult:Int = 1;
+
 	override function create() {
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-			FlxG.sound.playMusic(Paths.music('freakyMenuStoryMenu'));
-
+		FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+		FlxG.sound.music.fadeIn(4, 0, 0.7);
+		
 		persistentDraw = true;
 		persistentUpdate = true;
 
@@ -241,6 +247,12 @@ class StoryMenuState extends MusicBeatState {
 					changeDifficulty(1);
 				if (controls.LEFT_P)
 					changeDifficulty(-1);
+
+				if(FlxG.mouse.wheel != 0)
+				{
+					FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
+					changeWeek(-shiftMult * FlxG.mouse.wheel);
+				}
 			}
 
 			if (controls.ACCEPT)

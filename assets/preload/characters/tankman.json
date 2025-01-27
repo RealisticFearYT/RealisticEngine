@@ -1,0 +1,49 @@
+{
+	"Anims": [
+		{
+			"Offsets": [-4, 0],
+			"AnimLOOP": true,
+			"AnimFPS": 24,
+			"Animation": "idle",
+			"AnimIndices": [],
+			"AnimPrefix": "Tankman Idle Dance 1"
+		},
+		{
+			"Offsets": [-12, -3],
+			"AnimLOOP": false,
+			"AnimFPS": 24,
+			"Animation": "singLEFT",
+			"AnimIndices": [],
+			"AnimPrefix": "Tankman Right Note 1"
+		},
+		{
+			"Offsets": [-10, -50],
+			"AnimLOOP": true,
+			"AnimFPS": 24,
+			"Animation": "singDOWN",
+			"AnimIndices": [],
+			"AnimPrefix": "Tankman DOWN note 1"
+		},
+		{
+			"Offsets": [-29, 27],
+			"AnimLOOP": true,
+			"AnimFPS": 24,
+			"Animation": "singUP",
+			"AnimIndices": [],
+			"AnimPrefix": "Tankman UP note 1"
+		},
+		{
+			"Offsets": [-38, -7],
+			"AnimLOOP": true,
+			"AnimFPS": 24,
+			"Animation": "singRIGHT",
+			"AnimIndices": [],
+			"AnimPrefix": "Tankman Note Left 1"
+		}
+	],
+	"CharacterAntialiasing": true,
+	"CharacterImage": "characters/tankmanCaptain",
+	"CharacterPositionOffsets": [0, 350],
+	"CharacterFlipX": true,
+	"CharacterScale": 1
+}

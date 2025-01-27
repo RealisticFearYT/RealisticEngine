@@ -150,7 +150,7 @@ class Utilities {
 						return "stage";
 					case "monster" | "south" | "spookeez":
 						return "spooky";
-					case "blammed" | "philly" | "pico":
+					case "blammed" | "philly-nice" | "pico":
 						return "philly";
 					case "chillflow" | "high" | "high-sfw" | "milf" | "mombattle" | "satin-panties":
 						return "limo";
@@ -164,6 +164,8 @@ class Utilities {
 						return "schoolEvil";
 					case "roses":
 						return "schoolMad";
+					case "ugh" | "guns"| "stress":
+						return "tank";
 					default:
 						return "stage";
 				}

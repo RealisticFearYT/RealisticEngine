@@ -12,6 +12,7 @@ import lime.utils.Assets as LimeAssets;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
 import openfl.utils.Assets;
+import Song.SwagSong;
 
 class LoadingState extends MusicBeatState {
 	// Loading --
@@ -34,10 +35,10 @@ class LoadingState extends MusicBeatState {
 	}
 
 	override function create() {
-		funkayBG = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFFCAFF4D);
+		funkayBG = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
 		add(funkayBG);
 
-		funkayScreen = new FlxSprite().loadGraphic(Paths.image('loading/funkayLoading'));
+		funkayScreen = new FlxSprite().loadGraphic(Paths.image('loading/nothing lmao'));
 		add(funkayScreen);
 		funkayScreen.setGraphicSize(0, FlxG.height);
 		funkayScreen.updateHitbox();
@@ -45,7 +46,7 @@ class LoadingState extends MusicBeatState {
 		funkayScreen.scrollFactor.set();
 		funkayScreen.screenCenter();
 
-		funkayBar = new FlxSprite(0, FlxG.height - 20).makeGraphic(FlxG.width, 10, 0xFFFF16D2);
+		funkayBar = new FlxSprite(0, FlxG.height - 20).makeGraphic(FlxG.width, 10, 0xFF000000);
 		add(funkayBar);
 		funkayBar.screenCenter(X);
 
