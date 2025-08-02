@@ -1,14 +1,16 @@
 # <img src="art/icon64.png" align="center"> Friday Night Funkin' Realistic Engine </img>
 ## Realistic Engine Team
--SoyFear (Creator, Programmer, Artist)
+-ImFear (Creator, Programmer, Artist)
+
+-Kiovex (Programmer, Concept Art)
+
+-FelixDevYT (Programmer, Concept Art)
 
 -Britex (Ex-Programmer)
 
--Arsenio2024 (Artist)
+-Arsenio2024 (Artist, Optimizer)
 
--LobitoCraftMC (Programmer)
-
--CesarTSO (Artist)
+-I'm Soul! (Programmer)
 
 -Michael121408 (Programmer)
 
@@ -50,3 +52,4 @@ The lime test windows -debug is used to see the errors in the compilation.
 Is it normal that after compiling it tells me a warning at some point?
 
 Yes, if it is normal, it is not an error, it is just a warning.
+
